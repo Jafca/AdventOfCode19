@@ -41,8 +41,8 @@ namespace AoC19
             var steps1 = AddSteps(s1.Split(','));
             var steps2 = AddSteps(s2.Split(','));
 
-            var intersection = steps1.Intersect(steps2).OrderBy(s => Math.Abs(s.X) + Math.Abs(s.Y)).First();
-            Console.WriteLine(intersection.X + intersection.Y);
+            var distance = steps1.Intersect(steps2).Min(s => Math.Abs(s.X) + Math.Abs(s.Y));
+            Console.WriteLine(distance);
         }
 
         public static List<Step> AddSteps(string[] paths)
